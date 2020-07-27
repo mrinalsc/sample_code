@@ -4,15 +4,14 @@ const { promisify } = require('util');
 const { nextTick } = require('process');
 const writeFile = promisify(fs.writeFile);
 const readdir = promisify(fs.readdir);
-var http=require('http')
-var server=http.createServer((function(request,response)
-{
-	response.writeHead(200,
-	{"Content-Type" : "text/plain"});
-	response.end("thankyou for checking the code");
-}));
+const https = require('https');
 
-const PORT = process.env.PORT || 3001;
-server.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
-});
+const options = {
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem')
+  };
+  
+  https.createServer(options, function (req, res) {
+    res.writeHead(200);
+    res.end("hello world\n");
+  }).listen(8000);
