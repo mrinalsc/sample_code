@@ -1,0 +1,289 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Audio Capture - Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="javascripts/instrumentation.js" charset="utf-8"></script>
+    
+</head>
+
+<body class="w3-myfont">
+    <div id="welcome-container" class="w3-container vb-nopadding w3-animate-right">
+        <header class="w3-container w3-center w3-blue">
+            <h4>Audio Data Collection</h4>
+        </header>
+        <div class="w3-container w3-margin w3-large w3-center">
+            <p>Participation in this HIT is voluntary and is subject to the terms and conditions presented in the next page.</p>
+            <p>Your computer needs to have  a microphone , to be able to complete this hit.</p>
+            <p>Thank you for your help!</p>
+        </div>
+        <div class="w3-row w3-display-container">
+            <div class="w3-col m4 l2 w3-display-middle w3-center w3-container">
+                <button id="welcome-btn" class="w3-btn w3-block w3-large w3-round-large w3-white w3-border w3-border-blue">
+                    <b class="w3-text-blue w3-hover-text-cobalt">Continue</b>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="incompatible-browser-container" class="w3-hide w3-container  vb-nopadding w3-animate-right">
+        <header class="w3-container w3-center w3-red">
+            <h4>We are sorry! Your browser is not supported</h4>
+        </header>
+        <div id="browsers-list" class="w3-container w3-large w3-center w3-margin">
+            <p>Please use one of the supported browsers below</p>
+            <ul class="w3-ul w3-center w3-hoverable">
+                <li>
+                    <a class="w3-block" target="_blank" href="https://www.mozilla.org">Firefox</a>
+                </li>
+                <li>
+                    <a class="w3-block" target="_blank" href="https://www.google.com/chrome/">Chrome</a>
+                </li>
+                <li>
+                    <a class="w3-block" target="_blank" href="https://www.opera.com/">Opera</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="incompatible-os-container" class="w3-hide w3-container  vb-nopadding w3-animate-right">
+        <header class="w3-container w3-center w3-red">
+            <h4>We are sorry! your OS is not yet supported</h4>
+        </header>
+        <div id="incompatible-os-info" class="w3-container w3-large w3-center w3-margin"></div>
+            <p>Unfortunately, MacOS is currently not supported for this experiment.</p>
+        </div>
+    </div>
+    <div id="worker-info-container" class="w3-hide w3-container vb-nopadding w3-animate-right">
+        <header class="w3-container w3-center w3-blue">
+            <h4>Please fill in your information</h4>
+        </header>
+        <div class="w3-container w3-large w3-center w3-margin">
+            <p>We will use this information to ensure we have enough diversity in the data we are using to improve our machine
+                learning algorithms. Before we begin please fill out the following:</p>
+            <div id="worker-info-inputs">
+                <div class="w3-row-padding">
+                    <div class="w3-quarter"> &nbsp;</div>
+                    <div class="w3-container w3-half w3-margin-bottom">
+                        <label for="gender">Gender</label>
+                        <select required class="w3-select worker-info-input" name="gender" id="worker-gender">
+                            <option value=""></option>
+                            <option value="f">Male</option>
+                            <option value="m">Female</option>
+                            <option value="o">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="w3-row-padding">
+                    <div class="w3-quarter"> &nbsp;</div>
+                    <div class="w3-container w3-half w3-margin-bottom">
+
+                        <label for="age">Age</label>
+                        <select required class="w3-select worker-info-input" name="age" id="worker-age">
+                            <option value=""></option>
+                            <option value="18-25">18-25</option>
+                            <option value="26-30">26-30</option>
+                            <option value="31-35">31-35</option>
+                            <option value="36-45">36-45</option>
+                            <option value="46-55">46-55</option>
+                            <option value="56 or older">56 or older</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="w3-panel">
+                    <div id="worker-info-container" class="w3-center">
+                        <div class="w3-bar">
+                            <button id="worker-info-btn" class="w3-btn w3-block w3-large w3-round-large w3-white w3-border w3-border-blue">
+                                <b class="w3-text-blue w3-hover-text-cobalt">CONTINUE</b>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div id="existing-worker-container" class="w3-container w3-hide vb-nopadding w3-animate-right">
+        <header class="w3-container w3-center w3-orange">
+            <h4>We are sorry! You are allowed only once to complete this assignment.</h4>
+        </header>
+        <div id="existing-worker-message" class="w3-container w3-large w3-center w3-margin">
+            <p>Hi! We are sorry! For this research project we only allow each worker only once to complete this assignment.
+                Please try again later sometime. </p>
+        </div>
+    </div>
+    <div id="consent-form-container" class="w3-hide w3-container vb-nopadding w3-animate-right">
+        <header class="w3-container w3-blue w3-center">
+            <h4>MEDIA RELEASE AND CONSENT FORM</h4>
+        </header>
+        <div id="model-release-form-content" class="w3-panel w3-normal w3-large">
+            <div class="w3-container w3-white w3-large">
+                <p>Thank you for participating in the Project. Your participation in the Project is voluntary. If you participate
+                    in the Project, you agree to be governed by the terms herein. The purpose of this project is to record
+                     audio data to be used for research purposes and to train and/or evaluate machine
+                    learning models used by Microsoft audio and visual-related technologies.</p>
+            </div>
+
+            <div class="w3-container">
+                <p>
+                    <b>Please read the terms carefully and sign in the space provided to indicate that you have read and understood
+                        the information furnished in this Media Release and Consent Form.</b>
+                </p>
+            </div>
+
+            <div class="w3-container ">
+                <p>
+                    <b>“Project”:</b> The Project will consist of a single session where you will be requested to say sentences
+                    from a script while being recorded.</p>
+
+            </div>
+            <div class="w3-container ">
+                <p>
+                    <b>“Media”:</b>  audio recording generated by your participation in this Project</p>
+
+            </div>
+            <div class="w3-container">
+
+                <h4>Your Authority to Participate</h4>
+
+                <p>You represent that: (a) you have the full right and authority to sign this form; (b) you are not under 18
+                    years of age; (c) the rights you grant to Microsoft under this form will not be limited in any way by
+                    any other contract or obligation, including any agreement with any union or guild; (d) that you are not
+                    a resident of Illinois, Texas or Washington and (e) you will not disclose to Microsoft any non- public
+                    information, whether yours or a third party’s, without notifying Microsoft in advance. If you reside
+                    in the European Union, you agree that your name, likeness and Media may be transferred outside of the
+                    European Union to the United States, or any other territory.</p>
+            </div>
+            <div class="w3-container">
+
+                <h4>Your Rights, Permissions, Authorization,</h4>
+
+                <p>Your participation in the Project, Media or ancillary material produced in connection with your participation
+                    in the Project (“Material”) is provided as work for hire for Microsoft. You assign any and all intellectual
+                    property rights, ancillary rights and performance rights in connection with the Media to Microsoft for
+                    use by Microsoft, its successors, assigns and licensees worldwide in perpetuity on a complete buyout
+                    basis. To the extent that such rights are not transferable, you provide an irrevocable, fully paid, worldwide
+                    license to Microsoft.</p>
+
+                <p>You grant Microsoft its legal representatives, successors, licensees, and assigns, the unrestricted and irrevocable
+                    rights and releases described herein to use my appearance, form, name, likeness and voice, as contained
+                    in the Media. You agree that the Media may be reviewed by Microsoft employees and/or
+                    <b>third-party</b> vendors engaged by Microsoft. In addition, you agree to release Microsoft and its affiliates
+                    from any and all claims that you may have now or in the future related to your participation in the Project.</p>
+            </div>
+
+            <div class="w3-container">
+                <h4>Waiver and Release of Liability and Assumption of Risk (where applicable)</h4>
+                <p>You agree to release Microsoft, its officers, agents, and employees from any action, claim or demand that
+                    may have for any and all damage, harm, loss or injury you may suffer or sustain by your participation
+                    in the Project.</p>
+                <p>You waive any right to inspect or approve any use of the Media and any payment or additional consideration
+                    for any use of the Media. I understand and agree that the Media may be modified, altered, cropped and
+                    combined with other content such as images, video, audio, text and graphics. I acknowledge and agree
+                    that this release is binding on my heirs and assigns, and that the personal information provided by me
+                    as part of this release may be used and disclosed by Microsoft and its licensees and assigns for the
+                    purposes of selling, licensing and distributing the appearance, form, name, likeness and voice, of the
+                    person indicated above as contained in the Media for commercial purposes.
+                </p>
+
+            </div>
+            <div class="w3-container">
+                <div class="w3-row-padding">
+                    <div class="w3-half">
+                        <label for="agreementDate">Today's date is:</label>
+                        <input disabled type="date" onblur="validateInputs('vb-consent-input')" name="agreementDate" required class="w3-input w3-animate-input w3-large vb-consent-input"
+                            id="agreementDate" autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="w3-container">
+            <div class="w3-row-padding">
+                <div class="w3-col w3-large vb-checkbox-container">
+                    <input type="checkbox" onblur="validateInputs('vb-consent-input')" required name="agreeCheckbox" class="w3-check w3-large vb-consent-input"
+                        id="agreeCheckbox" autocomplete="off" />
+                    <label for="agreeCheckbox">I agree to the conditions entered above</label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="w3-panel">
+            <div id="acceptance-container" class="w3-center">
+                <div class="w3-bar">
+                    <button id="consent-agreement-btn" class="w3-btn w3-block w3-large w3-round-large w3-white w3-border w3-border-blue">
+                        <b class="w3-text-blue w3-hover-text-cobalt">ACCEPT AND CONTINUE</b>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="recording-container" class="w3-hide w3-container vb-nopadding w3-animate-right">
+        <header class="w3-container w3-center w3-blue">
+            <h4>Audio Recording exe</h4>
+            <script>
+                
+                function validateForm() {
+      
+       
+                  var x = document.forms["myForm"]["code"].value;
+                  if (x == "") {
+                    alert("Please enter the completion code");
+                    return false;
+                  }
+                
+
+                  
+
+                }
+                </script>
+        </header>
+        <Body class="w3-container w3-center w3-blue">
+          
+            <h4>Please follow the below steps -</h4>
+            <h4>1. Click on the Link below and download the zip file.</h4>
+            <a href="/echodata20200624.zip" download>download file</a>
+            <h4>2. Unzip the file.</h4>
+            <h4>3. Launch the EDMform.exe to open audio recording application.</h4>
+            <h4>4. Follow the steps on the screen.</h4>
+            <h4>5. On the last step, a completion code will be displayed,copy the code and paste it</h4>
+            <h4>   in the below text box and click submit. A wrong code will make you fill the form all over again.</h4>
+            <form name="myForm" action="" onsubmit="return validateForm()">
+                Completion Code: <input type="text" name="code">
+                <input type="submit" value="Submit">
+              </form>
+        </Body>
+        
+        <div class="w3-rest w3-container">
+            <div class="w3-row-padding w3-margin w3-large w3-container" id="recording-instructions">
+                <div class="w3-container" id="static-instructions"></div>
+                <div class="w3-container" id="dynamic-instructions"></div>
+            </div>
+        </div>
+    </div>
+    <div id="completed-container" class="w3-hide w3-container vb-nopadding w3-animate-right">
+        <header class="w3-container w3-center w3-blue">
+            <h4>Audio Recording</h4>
+        </header>
+        <div class="w3-container w3-margin w3-large w3-center">
+            <p>Your auido was successfully uploaded. Thank you for your participation in this study.</p>
+
+            <button id="submit-task-btn" class="w3-btn w3-large w3-round-large w3-white w3-border w3-border-blue">
+                <b class="w3-text-blue w3-hover-text-cobalt">SUBMIT</b>
+            </button>
+        </div>
+    </div>
+    <form id="mturk-submission" method="post" action=""></form>
+
+    <script src="javascripts/vb-recorder.js"></script>
+    <script src="javascripts/vb-booth.js"></script>
+    <script src="javascripts/vb-renderer.js"></script>
+    <script src="javascripts/vb-db-integrations.js"></script>
+    <script src="javascripts/upload-handler.js"></script>
+
+</body>
+
+</html>

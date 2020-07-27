@@ -1,0 +1,28 @@
+{
+  "name": "record-example",
+  "version": "0.0.1",
+  "description": "Records and saves audio to the server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "record",
+    "audio"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.0",
+    "express": "^4.17.1",
+    "localStorage": "^1.0.4",
+    "mssql": "^6.2.0",
+    "mysql": "^2.18.1",
+    "node-localstorage": "^2.1.6",
+    "sequelize": "^6.3.0",
+    "tedious": "^8.3.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {}
+}

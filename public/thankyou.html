@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <div id="recording-container" class="w3-hide w3-container vb-nopadding w3-animate-right">
+    <header class="w3-container w3-center w3-blue">
+        <h4 style="font-size:30px">Get Name</h4>
+        
+        <script>
+            
+            function validateForm() {
+  
+   
+              var x = document.forms["myForm"]["code"].value;
+              if (x == "") {
+                alert("Please enter your name");
+                return false;
+              }
+            
+
+              
+
+            }
+            </script>
+    </header>
+    <Body class="w3-container w3-center w3-blue">
+        <form name="myForm" action="" onsubmit="return validateForm()">
+            Name: <input type="text" name="code">
+            <input type="submit" value="Submit">
+          </form>
+    </Body>
+  </div>
+</html>
