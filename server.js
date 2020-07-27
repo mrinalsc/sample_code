@@ -13,11 +13,7 @@ var count='0';
 
  app = express();
 
-app.use( function(req, res, next)  {
-  
-                app.use(express.static(__dirname + "/public/thankyou.html"));
-                res.sendFile(__dirname + "/public/thankyou.html");
-});
+
 
 app.use(express.static('public'));
 
