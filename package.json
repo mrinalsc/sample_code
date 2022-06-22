@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "async": "^3.2.0",
+    "async": "^3.2.2",
     "express": "^4.17.1",
     "localStorage": "^1.0.4",
     "mssql": "^6.2.0",
